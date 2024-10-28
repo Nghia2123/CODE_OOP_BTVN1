@@ -29,6 +29,11 @@ int main() {
 			if (ps[i].mau == 0)
 				cout << "Mau so phai khac 0. Vui long nhap lai!" << "\n\n";
 
+			if (ps[i].mau < 0) {
+				ps[i].tu = -ps[i].tu;
+				ps[i].mau = -ps[i].mau;
+			}
+
 		} while (ps[i].mau == 0);
 	}
 
