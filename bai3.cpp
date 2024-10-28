@@ -79,6 +79,13 @@ int main() {
             // Kiem tra mau so cua phan so phai khac 0
 			if (PhanSos[i].mau == 0) 
 				cout << "Mau so phai khac 0! Vui long nhap lai.\n\n";
+
+			// Chuan hoa phan so
+			if (PhanSos[i].mau < 0) {
+				PhanSos[i].tu = -PhanSos[i].tu;
+				PhanSos[i].mau = -PhanSos[i].mau;
+			}
+
         } while (PhanSos[i].mau == 0);
     }
 
