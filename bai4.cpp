@@ -46,13 +46,6 @@ int main() {
     do {
         arnoldsCatMap(matrix, m); // Thuc hien bien doi Arnold's Cat Map
         k++;                      // Tang bien dem so lan bien doi len 1
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < m; j++) {
-                cout << matrix[i][j] << ' ';
-            }
-            cout << '\n';
-        }
-        cout << '\n';
     } while (!isEqual(matrix, original_matrix, m));
     // Dung khi ma tran ban dau duoc phuc hoi
 
