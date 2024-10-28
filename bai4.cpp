@@ -37,7 +37,6 @@ int main() {
             cin >> matrix[i][j];
         }
     }
-    cout << '\n';
 
     // Luu lai ma tran ban dau de so sanh
     vector<vector<int>> original_matrix = matrix;
