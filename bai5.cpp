@@ -5,16 +5,19 @@
 using namespace std;
 
 // Ham kiem tra xem hinh chu nhat co ria bang 0 hay khong
-bool hasZeroBorder(const vector<vector<int>>& matrix, int x, int y, int w, int h, int m, int n) {
+bool hasZeroBorder(const vector<vector<int>>& matrix, int x, 
+                        int y, int w, int h, int m, int n) {
     // Kiem tra canh tren va canh duoi cua hinh chu nhat
     for (int j = x; j < x + w; ++j) {
-        if ((y > 0 && matrix[y - 1][j] != 0) || (y + h < m && matrix[y + h][j] != 0)) {
+        if ((y > 0 && matrix[y - 1][j] != 0) 
+            || (y + h < m && matrix[y + h][j] != 0)) {
             return false;
         }
     }
     // Kiem tra canh trai va canh phai cua hinh chu nhat
     for (int i = y; i < y + h; ++i) {
-        if ((x > 0 && matrix[i][x - 1] != 0) || (x + w < n && matrix[i][x + w] != 0)) {
+        if ((x > 0 && matrix[i][x - 1] != 0) 
+            || (x + w < n && matrix[i][x + w] != 0)) {
             return false;
         }
     }
@@ -50,7 +53,7 @@ vector<vector<int>> findRectangles(const vector<vector<int>>& matrix, int m, int
                 // Tim chieu cao cua hinh chu nhat
                 while (y + h < m && matrix[y + h][j] == 1) ++h;
 
-                // Danh dau cac phan tu cua hinh chu nhat la da tham neu thoa dieu kien
+                // Danh dau cac phan tu cua hcn la da tham neu thoa dieu kien
                 if (w >= 2 && h >= 2 && hasZeroBorder(matrix, j, i, w, h, m, n)
                     && isFillWith1(matrix, j, i, w, h)) {
 
@@ -67,10 +70,12 @@ vector<vector<int>> findRectangles(const vector<vector<int>>& matrix, int m, int
     }
 
     // Sap xep danh sach cac hinh chu nhat tu trai sang phai va tu tren xuong duoi
-    sort(rectangles.begin(), rectangles.end(), [](const vector<int>& a, const vector<int>& b) {
-        if (a[1] == b[1]) return a[0] < b[0];
-        return a[1] < b[1];
-        });
+    sort(rectangles.begin(), rectangles.end(), 
+        [](const vector<int>& a, const vector<int>& b) {
+            if (a[1] == b[1]) return a[0] < b[0];
+            return a[1] < b[1];
+        }
+    );
 
     return rectangles;
 }
@@ -92,7 +97,8 @@ int main() {
 
     // Xuat cac hinh chu nhat
     for (const auto& rect : rectangles) {
-        cout << "[" << rect[0] << ", " << rect[1] << ", " << rect[2] << ", " << rect[3] << "]\n";
+        cout << "[" << rect[0] << ", " << rect[1] << ", " 
+                << rect[2] << ", " << rect[3] << "]\n";
     }
 
     return 0;
